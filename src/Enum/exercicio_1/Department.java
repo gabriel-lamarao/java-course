@@ -1,4 +1,4 @@
-package Enum.exercicio;
+package Enum.exercicio_1;
 
 public class Department {
     private String name;
