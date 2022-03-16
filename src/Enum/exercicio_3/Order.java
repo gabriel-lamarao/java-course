@@ -1,5 +1,6 @@
 package Enum.exercicio_3;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,19 +13,29 @@ public class Order {
     private Date moment;
     private OrderStatus status;
     private Client client;
-    private List<OrderItem> items = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();
 
-    public void addItem(OrderItem item){
+    public Order() {
+        this.moment = new Date();
+    }
+
+    public Order(OrderStatus status, String clientName, String clientEmail, Date birthDate) throws ParseException {
+        this.moment = new Date();
+        this.status = status;
+        this.client = new Client(clientName, clientEmail, birthDate);
+    }
+
+    public void addItem(Item item){
         items.add(item);
     }
 
-    public void removeItem(OrderItem item){
+    public void removeItem(Item item){
         items.remove(item);
     }
 
     public Double total(){
         Double total = 0.0;
-        for (OrderItem i : items) {
+        for (Item i : items) {
             total += i.subTotal();
         }
         return total;
@@ -37,8 +48,57 @@ public class Order {
         sb.append(sdf.format(moment) + "\n");
         sb.append("Order status: " + status);
         sb.append("\nClient: " + client.getName());
-        sb.append("- " + client.getEmail());
+        sb.append(" (" + sdf.format(client.getBirthDate()) + ")");
+        sb.append(" - " + client.getEmail());
         sb.append("\nOrder items:\n");
+        for (Item oi:
+             items) {
+            sb.append(oi.getName() + ", " + "$" + oi.getPrice() +
+                    " Quantity: " + oi.getQuantity() +
+                    " Subtotal: " + oi.subTotal() + "\n");
+        }
+        sb.append("\nTotal price: " + "$" + total());
 
+        return sb.toString();
+    }
+
+    public SimpleDateFormat getSdf() {
+        return sdf;
+    }
+
+    public void setSdf(SimpleDateFormat sdf) {
+        this.sdf = sdf;
+    }
+
+    public Date getMoment() {
+        return moment;
+    }
+
+    public void setMoment(Date moment) {
+        this.moment = moment;
+    }
+
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(String clientName, String clientEmail, Date birthDate) {
+        this.client = new Client(clientName, clientEmail, birthDate);
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 }

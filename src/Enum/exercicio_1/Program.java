@@ -24,7 +24,7 @@ public class Program {
         double baseSalary = sc.nextDouble();
         Worker worker = new Worker(workerName, WorkLevel.valueOf(workerLevel), baseSalary, new Department(departmentName));
 
-        System.out.print("How maby contracts to this worker? ");
+        System.out.print("How many contracts to this worker? ");
         int n = sc.nextInt();
 
         for (int i=1; i<=n; i++){
