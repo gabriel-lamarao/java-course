@@ -1,4 +1,4 @@
-package Enum.exercicio_2;
+package enums.exercicio_2;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -7,14 +7,14 @@ import java.util.List;
 
 public class Post {
 
-    private static SimpleDateFormat sdf = new SimpleDateFormat();
+    private static final SimpleDateFormat sdf = new SimpleDateFormat();
 
     private Date moment;
     private String title;
     private String content;
     private Integer likes;
 
-    private List<Comment> comments = new ArrayList<>();
+    private  List<Comment> comments = new ArrayList<>();
 
 
     public Post(Date moment, String title, String content, Integer likes) {

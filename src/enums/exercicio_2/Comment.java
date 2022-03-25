@@ -1,4 +1,4 @@
-package Enum.exercicio_2;
+package enums.exercicio_2;
 
 public class Comment {
     private String text;

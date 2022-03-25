@@ -1,6 +1,6 @@
-package Enum.exercicio_3;
+package enums.exercicio_3;
 
-import java.text.ParseException;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,7 +19,7 @@ public class Order {
         this.moment = new Date();
     }
 
-    public Order(OrderStatus status, String clientName, String clientEmail, Date birthDate) throws ParseException {
+    public Order(OrderStatus status, String clientName, String clientEmail, Date birthDate){
         this.moment = new Date();
         this.status = status;
         this.client = new Client(clientName, clientEmail, birthDate);

@@ -1,4 +1,4 @@
-package Enum.exercicio_3;
+package enums.exercicio_3;
 
 public class Item {
     private String name;

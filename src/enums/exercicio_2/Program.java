@@ -1,4 +1,4 @@
-package Enum.exercicio_2;
+package enums.exercicio_2;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

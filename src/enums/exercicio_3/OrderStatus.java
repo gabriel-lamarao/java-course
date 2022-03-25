@@ -1,8 +1,8 @@
-package Enum.exercicio_3;
+package enums.exercicio_3;
 
 public enum OrderStatus {
     PENDING_PAYMENT,
     PROCESSING,
     SHIPPED,
-    DELIVERED;
+    DELIVERED
 }
