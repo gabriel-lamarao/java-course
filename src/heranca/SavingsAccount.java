@@ -1,6 +1,10 @@
 package heranca;
 
-public class SavingsAccount extends Account{
+/* Adicionar a plavra "final", bloqueia a criação de subclasses
+    Exemplo em SavingAccountPlus
+    Em métodos a palavra "final" bloqueia a herança dos mesmos.
+ */
+public final class SavingsAccount extends Account{
     private Double interestRate;
 
     public SavingsAccount(){
@@ -13,7 +17,7 @@ public class SavingsAccount extends Account{
     }
 
     @Override
-    public void withdraw(Double amount) {
+    public final void withdraw(Double amount) {
         balance -= amount;
     }
 
