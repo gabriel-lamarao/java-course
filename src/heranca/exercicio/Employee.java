@@ -1,0 +1,68 @@
+package heranca.exercicio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Employee {
+    private String name;
+    private Integer hours;
+    private Double valuePerHour;
+    private List<Employee> employees = new ArrayList<>();
+
+    public Employee() {
+    }
+
+    public Employee(String name, Integer hours, Double valuePerHour) {
+        this.name = name;
+        this.hours = hours;
+        this.valuePerHour = valuePerHour;
+    }
+
+    public void addEmployee(){
+        employees.add(this);
+    }
+
+    public void removeEmployee(){
+        employees.remove(this);
+    }
+
+
+
+    public Double payment(){
+        return hours * valuePerHour;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getHours() {
+        return hours;
+    }
+
+    public void setHours(Integer hours) {
+        this.hours = hours;
+    }
+
+    public Double getValuePerHour() {
+        return valuePerHour;
+    }
+
+    public void setValuePerHour(Double valuePerHour) {
+        this.valuePerHour = valuePerHour;
+    }
+
+    public String toString() {
+        StringBuilder sd = new StringBuilder();
+        for ( Employee e : employees) {
+            sd.append("Name: " + e.getName() + "\n" +
+                    "Salary: " + e.payment() + "\n");
+
+        }
+        return sd.toString();
+    }
+}
