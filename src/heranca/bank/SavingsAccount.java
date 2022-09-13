@@ -1,4 +1,4 @@
-package heranca;
+package heranca.bank;
 
 /* Adicionar a plavra "final", bloqueia a criação de subclasses
     Exemplo em SavingAccountPlus

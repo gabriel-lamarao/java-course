@@ -1,4 +1,4 @@
-package heranca.exercicio;
+package heranca.employee;
 
 public class Program {
 

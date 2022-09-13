@@ -1,4 +1,4 @@
-package heranca;
+package heranca.bank;
 
 public class Account {
     private Integer number;
